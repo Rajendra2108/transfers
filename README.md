@@ -1,20 +1,26 @@
-# Getting Started
+Coding Exercise - Transfer money between tow accounts
 
-### Reference Documentation
-For further reference, please consider the following sections:
+Setup:
+Used Spring Boot to create the project with in-memory h2 database for storing accounts and transactions.
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.4.5/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.4.5/maven-plugin/reference/html/#build-image)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.4.5/reference/htmlsingle/#boot-features-developing-web-applications)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/2.4.5/reference/htmlsingle/#boot-features-jpa-and-spring-data)
+To run code:
+./mvnw clean install
 
-### Guides
-The following guides illustrate how to use some features concretely:
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+To test try with the below request body:
+http://localhost:8080/swagger-ui/#/transfers-controller/transferFundsUsingPOST
 
-# transfers
+{
+  "amount": 10,
+  "currency": "GBP",
+  "id": 10,
+  "sourceAccountId": 1,
+  "targetAccountId": 2
+}
+
+
+Feature Improvements:
+- Error handling with global exception handler
+- Improve error handling
+- Add performance tests
+
